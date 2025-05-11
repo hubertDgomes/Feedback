@@ -15,4 +15,5 @@ btn1.addEventListener("click", function(){
 btn2.addEventListener("click", function(){
     outFed.innerHTML = ""
     inputFed.value = ""
+    warMSG.style.display = "none"
 })
