@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --spacing-container: 1230px; 
+  --font-deFont: "Nunito", "sans-serif";
+}
