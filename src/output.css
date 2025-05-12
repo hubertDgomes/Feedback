@@ -235,6 +235,15 @@
   .px-\[10px\] {
     padding-inline: 10px;
   }
+  .px-\[20px\] {
+    padding-inline: 20px;
+  }
+  .py-\[0px\] {
+    padding-block: 0px;
+  }
+  .py-\[10px\] {
+    padding-block: 10px;
+  }
   .py-\[20px\] {
     padding-block: 20px;
   }
