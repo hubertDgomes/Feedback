@@ -7,6 +7,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-amber-200: oklch(92.4% 0.12 95.746);
     --color-white: #fff;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
@@ -163,44 +164,32 @@
   .m-auto {
     margin: auto;
   }
+  .mt-\[20px\] {
+    margin-top: 20px;
+  }
+  .mt-\[40px\] {
+    margin-top: 40px;
+  }
   .block {
     display: block;
   }
   .hidden {
     display: none;
   }
+  .inline {
+    display: inline;
+  }
   .table {
     display: table;
-  }
-  .h-\[100px\] {
-    height: 100px;
   }
   .h-\[200px\] {
     height: 200px;
   }
-  .h-\[300px\] {
-    height: 300px;
-  }
-  .h-\[400px\] {
-    height: 400px;
-  }
-  .w-\[0px\] {
-    width: 0px;
-  }
   .w-\[100\%\] {
     width: 100%;
   }
-  .w-\[200px\] {
-    width: 200px;
-  }
-  .w-\[250px\] {
-    width: 250px;
-  }
   .w-\[300px\] {
     width: 300px;
-  }
-  .w-\[600px\] {
-    width: 600px;
   }
   .max-w-container {
     max-width: var(--spacing-container);
@@ -221,28 +210,31 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .border-1 {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
   .border-2 {
     border-style: var(--tw-border-style);
     border-width: 2px;
+  }
+  .border-\[1px\] {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
   }
   .border-\[2px\] {
     border-style: var(--tw-border-style);
     border-width: 2px;
   }
+  .border-\[10px\] {
+    border-style: var(--tw-border-style);
+    border-width: 10px;
+  }
+  .bg-amber-200 {
+    background-color: var(--color-amber-200);
+  }
   .bg-white {
     background-color: var(--color-white);
-  }
-  .px-\[10px\] {
-    padding-inline: 10px;
-  }
-  .px-\[20px\] {
-    padding-inline: 20px;
-  }
-  .py-\[0px\] {
-    padding-block: 0px;
-  }
-  .py-\[10px\] {
-    padding-block: 10px;
   }
   .py-\[20px\] {
     padding-block: 20px;
@@ -271,6 +263,18 @@
   .underline {
     text-decoration-line: underline;
   }
+  .shadow {
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-2xl {
+    --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-lg {
+    --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
@@ -281,37 +285,6 @@
   }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
-  }
-  .sm\:w-\[200px\] {
-    @media (width >= 40rem) {
-      width: 200px;
-    }
-  }
-  .sm\:border-\[2px\] {
-    @media (width >= 40rem) {
-      border-style: var(--tw-border-style);
-      border-width: 2px;
-    }
-  }
-  .sm\:px-\[10px\] {
-    @media (width >= 40rem) {
-      padding-inline: 10px;
-    }
-  }
-  .sm\:px-\[20px\] {
-    @media (width >= 40rem) {
-      padding-inline: 20px;
-    }
-  }
-  .sm\:py-\[10px\] {
-    @media (width >= 40rem) {
-      padding-block: 10px;
-    }
-  }
-  .sm\:py-\[20px\] {
-    @media (width >= 40rem) {
-      padding-block: 20px;
-    }
   }
   .lg\:h-\[200px\] {
     @media (width >= 64rem) {
@@ -333,6 +306,71 @@
   syntax: "*";
   inherits: false;
   initial-value: solid;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
 }
 @property --tw-outline-style {
   syntax: "*";
@@ -396,6 +434,20 @@
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
       --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
